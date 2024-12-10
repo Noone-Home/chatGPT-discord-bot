@@ -13,11 +13,11 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag chatGPT-discord-bot:1.0.0
+      run: docker build . --file Dockerfile --tag chatgpt-discord-bot:1.0.0
       
     - name: TagImage
       run: |
         docker login ghcr.io -u joaodss2 -p ${{ secrets.GHDOCKERREPOSITORYTOKEN }}
         
-        docker tag chatGPT-discord-bot:1.0.0 ghcr.io/noone-home/chatGPT-discord-bot:1.0.0
-        docker push ghcr.io/noone-home/chatGPT-discord-bot:1.0.0
+        docker tag chatgpt-discord-bot:1.0.0 ghcr.io/noone-home/chatgpt-discord-bot:1.0.0
+        docker push ghcr.io/noone-home/chatgpt-discord-bot:1.0.0

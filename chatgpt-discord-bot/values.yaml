@@ -1,0 +1,15 @@
+replicaCount: 1
+
+image:
+  repository: ghcr.io/noone-home/chatgpt-discord-bot
+  tag: 1.0.0
+  pullPolicy: IfNotPresent
+imagePullSecrets:
+  - name: ghcr-secret
+
+container:
+  name: chatgpt-discord-bot
+  envFile: .env
+  restartPolicy: Always
+
+resources: {}

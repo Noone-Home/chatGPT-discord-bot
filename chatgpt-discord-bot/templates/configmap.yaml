@@ -1,6 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ .Release.Name }}-env-config
+  name: {{ .Release.Name }}-env
 data:
-  {{- .Files.Get .Values.container.envFile | nindent 2 }}
+  .env: |
+    {{ .Values.envConfig | nindent 4 }}
